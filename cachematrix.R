@@ -9,7 +9,7 @@
 
 ### makeCacheMatrix function, creates a special "matrix", which is really a list containing functions to
 #### 1. set the matrix
-#### 2. get the matirx
+#### 2. get the matrix
 #### 3. set the inverse of the matrix
 #### 4. get the inverse of the matrix
 
