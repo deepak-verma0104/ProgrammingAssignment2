@@ -5,6 +5,14 @@
 ### This program takes advantage of scoping rules of R Language and illustrate the use of an R Object and preserved state inside R Object.
 ### Concretely, these functions are calculating the inverse of a matrix and caching it for future use.
 
+## Usage
+
+### t  <- matrix(rnorm(25), 5,5)        #create matrix t - 5*5 in this case
+### t_obj <- makeCacheMatrix(t)         #create matrix object
+### t_obj$get()                         #return matrix
+### cacheSolve(t_obj)                   #calculate and retrun inverse of the matrix
+### cacheSolve(t_obj)                   #retrun cached inverse - does not calculate the inverse second time
+
 ## Short comment describing makeCacheMatrix function
 
 ### makeCacheMatrix function, creates a special "matrix", which is really a list containing functions to
@@ -33,6 +41,7 @@ makeCacheMatrix <- function(x = matrix()) {
         #get the inverse of the matrix
         get_inverse <- function() m
         
+        #return the matrix with functions defined
         list(set = set, get = get,
              set_inverse = set_inverse,
              get_inverse = get_inverse)
