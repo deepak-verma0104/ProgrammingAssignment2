@@ -10,8 +10,10 @@
 ### t  <- matrix(rnorm(25), 5,5)        #create matrix t - 5*5 in this case
 ### t_obj <- makeCacheMatrix(t)         #create matrix object
 ### t_obj$get()                         #return matrix
-### cacheSolve(t_obj)                   #calculate and retrun inverse of the matrix
-### cacheSolve(t_obj)                   #retrun cached inverse - does not calculate the inverse second time
+### cacheSolve(t_obj)                   #calculate and return inverse of the matrix
+### cacheSolve(t_obj)                   #return cached inverse - does not calculate the inverse second time
+### t_obj$get()  %*% cacheSolve(t_obj)  #result is an Identity Matrix - 5*5 in this case
+
 
 ## Short comment describing makeCacheMatrix function
 
@@ -71,7 +73,7 @@ cacheSolve <- function(x, ...) {
                 return(m)
         }
         
-        #if inverse not calculated and cached, then calculate inverse 
+        #if inverse not calculated and cached already, then calculate inverse 
         data <- x$get()
         m <- solve(data, ...)
         
