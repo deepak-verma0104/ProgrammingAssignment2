@@ -15,6 +15,7 @@
 
 makeCacheMatrix <- function(x = matrix()) {
 
+        #m to store / cache the inverse of the matrix
         m <- NULL
         
         #set the matrix 
